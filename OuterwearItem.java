@@ -11,5 +11,9 @@ public class OuterwearItem extends ClothingItem {
 						String code) {
 		// Passes category "Outerwear" to the parent constructor
 		super(itemName, "Outerwear", type, description, color, code);
-	}
+		}
+		@overide
+		public String getDisplayText() {
+			return "[Outerwear] " + super.getDisplayText()
+		}
 }
