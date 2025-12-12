@@ -1,5 +1,5 @@
-/** 
-* Represents a top item (t-shirts, button-downs, sweaters etc...).
+/**
+**Represents a top item (t-shirts, button-downs, sweaters etc...).
 	Category is fixed to "Top"
 */
 
