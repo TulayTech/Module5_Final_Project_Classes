@@ -40,7 +40,7 @@ public class Wardrobe {
         }
     }
 
-    public void addShoe(ClothingItem item) {
+    public void addShoes(ClothingItem item) {
         if (item != null && item.isValid()) {
             shoes.add(item);
         }
@@ -65,7 +65,7 @@ public class Wardrobe {
         bottoms.remove(item);
     }
 
-    public void removeShoe(ClothingItem item) {
+    public void removeShoes(ClothingItem item) {
         shoes.remove(item);
     }
 
@@ -94,7 +94,7 @@ public class Wardrobe {
         return getRandomItem(bottoms);
     }
 
-    public ClothingItem getRandomShoe() {
+    public ClothingItem getRandomShoes() {
         return getRandomItem(shoes);
     }
 
