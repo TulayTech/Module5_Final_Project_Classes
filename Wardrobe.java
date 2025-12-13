@@ -73,6 +73,27 @@ public class Wardrobe {
         hats.remove(item);
     }
 
+    // GETTERS FOR LISTS: returns the list of clothing items for a specific category.
+    public List<ClothingItem> getOuterwear() {
+        return outerwear;
+    }
+
+    public List<ClothingItem> getTops() {
+        return tops;
+    }
+
+    public List<ClothingItem> getBottoms() {
+        return bottoms;
+    }
+
+    public List<ClothingItem> getShoes() {
+        return shoes;
+    }
+
+    public List<ClothingItem> getHats() {
+        return hats;
+    }
+
     //HELPER METHODS: returns a random item from a list or null if the list is empty.
     private ClothingItem getRandomItem(List<ClothingItem> items) {
         if (items == null || items.isEmpty()) {
