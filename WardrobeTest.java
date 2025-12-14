@@ -92,7 +92,7 @@ public class WardrobeTest {
 
         System.out.println("Hats:");
         for (int i = 0; i < wardrobe.getHatList().size(); i++) {
-            System.out.println("  " + wardrobe.getHatList().getHatList().get(i));
+            System.out.println("  " + wardrobe.getHatList().get(i));
         }
 
         // Remove one top and show the result
