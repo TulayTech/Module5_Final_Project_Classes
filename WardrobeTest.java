@@ -1,14 +1,17 @@
 /**
- **Simple test class for Wardrobe and ClothingItem subclasses.
+ * Final Project: Virtual Wardrobe
+ *
+ * Simple console test for Wardrobe and ClothingItem subclasses.
  */
 public class WardrobeTest {
 
     public static void main(String[] args) {
-        // Create a new wardrobe
+
+        // Create a wardrobe to store items
         Wardrobe wardrobe = new Wardrobe();
 
-        // Create some sample clothing items
-        TopItem t1 = new TopItem(
+        // Create sample items
+        TopItem top1 = new TopItem(
                 "White Dress Shirt",
                 "Dress Shirt",
                 "Slim fit, long sleeve",
@@ -16,7 +19,7 @@ public class WardrobeTest {
                 "TOP-WHT-DRS"
         );
 
-        TopItem t2 = new TopItem(
+        TopItem top2 = new TopItem(
                 "Black T-Shirt",
                 "T-Shirt",
                 "Casual crew neck",
@@ -24,7 +27,7 @@ public class WardrobeTest {
                 "TOP-BLK-TSH"
         );
 
-        BottomItem b1 = new BottomItem(
+        BottomItem bottom1 = new BottomItem(
                 "Navy Dress Pants",
                 "Dress Pants",
                 "Slim fit stretch fabric",
@@ -32,7 +35,7 @@ public class WardrobeTest {
                 "BOT-NVY-DRS"
         );
 
-        OuterwearItem o1 = new OuterwearItem(
+        OuterwearItem outerwear1 = new OuterwearItem(
                 "Gray Blazer",
                 "Blazer",
                 "Business blazer, structured shoulders",
@@ -40,34 +43,64 @@ public class WardrobeTest {
                 "OUT-GRY-BLZ"
         );
 
-        // Add items to the wardrobe
-        wardrobe.addTop(t1);
-        wardrobe.addTop(t2);
-        wardrobe.addBottom(b1);
-        wardrobe.addOuterwear(o1);
+        ShoeItem shoe1 = new ShoeItem(
+                "Brown Dress Shoes",
+                "Dress Shoes",
+                "Formal leather shoes",
+                "Brown",
+                "SHO-BRN-DRS"
+        );
 
-        // Print out the wardrobe contents
+        HatItem hat1 = new HatItem(
+                "Black Baseball Cap",
+                "Baseball Cap",
+                "Casual hat for sunny days",
+                "Black",
+                "HAT-BLK-CAP"
+        );
+
+        // Add items to the wardrobe
+        wardrobe.addTop(top1);
+        wardrobe.addTop(top2);
+        wardrobe.addBottom(bottom1);
+        wardrobe.addOuterwear(outerwear1);
+        wardrobe.addShoe(shoe1);
+        wardrobe.addHat(hat1);
+
+        // Print wardrobe contents
         System.out.println("=== Wardrobe Contents ===");
+
         System.out.println("Tops:");
-        for (ClothingItem item : wardrobe.getTops()) {
-            System.out.println("  " + item);
+        for (int i = 0; i < wardrobe.getTopList().size(); i++) {
+            System.out.println("  " + wardrobe.getTopList().get(i));
         }
 
         System.out.println("Bottoms:");
-        for (ClothingItem item : wardrobe.getBottoms()) {
-            System.out.println("  " + item);
+        for (int i = 0; i < wardrobe.getBottomList().size(); i++) {
+            System.out.println("  " + wardrobe.getBottomList().get(i));
         }
 
         System.out.println("Outerwear:");
-        for (ClothingItem item : wardrobe.getOuterwear()) {
-            System.out.println("  " + item);
+        for (int i = 0; i < wardrobe.getOuterwearList().size(); i++) {
+            System.out.println("  " + wardrobe.getOuterwearList().get(i));
         }
 
-        // Test remove
-        wardrobe.removeTop(t2);
+        System.out.println("Shoes:");
+        for (int i = 0; i < wardrobe.getShoeList().size(); i++) {
+            System.out.println("  " + wardrobe.getShoeList().get(i));
+        }
+
+        System.out.println("Hats:");
+        for (int i = 0; i < wardrobe.getHatList().size(); i++) {
+            System.out.println("  " + wardrobe.getHatList().getHatList().get(i));
+        }
+
+        // Remove one top and show the result
+        wardrobe.removeTop(top2);
+
         System.out.println("\nAfter removing one top:");
-        for (ClothingItem item : wardrobe.getTops()) {
-            System.out.println("  " + item);
+        for (int i = 0; i < wardrobe.getTopList().size(); i++) {
+            System.out.println("  " + wardrobe.getTopList().get(i));
         }
     }
 }

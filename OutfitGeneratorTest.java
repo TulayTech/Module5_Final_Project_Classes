@@ -1,11 +1,14 @@
 /**
- **Test class for OutfitGenerator.
- * Builds a Wardrobe, creates Events, and prints generated outfits.
+ * Final Project: Virtual Wardrobe
+ *
+ * Tests OutfitGenerator by building a sample wardrobe, creating events,
+ * generating outfits, and printing the results.
  */
 public class OutfitGeneratorTest {
 
     public static void main(String[] args) {
-        // Build a sample wardrobe
+
+        // Create a wardrobe and add sample items
         Wardrobe wardrobe = new Wardrobe();
 
         wardrobe.addTop(new TopItem(
@@ -28,19 +31,19 @@ public class OutfitGeneratorTest {
                 "Charcoal Blazer", "Blazer",
                 "Business blazer for cold offices", "Charcoal", "OUT-CHR-BLZ"));
 
-        wardrobe.addShoes(new TopItem(
-                "Brown Dress Shoes", "Shoes",
+        wardrobe.addShoe(new ShoeItem(
+                "Brown Dress Shoes", "Dress Shoes",
                 "Formal leather shoes", "Brown", "SHO-BRN-DRS"));
 
-        wardrobe.addShoes(new TopItem(
-                "White Sneakers", "Shoes",
+        wardrobe.addShoe(new ShoeItem(
+                "White Sneakers", "Sneakers",
                 "Casual everyday sneakers", "White", "SHO-WHT-SNK"));
 
-        wardrobe.addHat(new TopItem(
-                "Black Baseball Cap", "Hat",
+        wardrobe.addHat(new HatItem(
+                "Black Baseball Cap", "Baseball Cap",
                 "Casual hat for sunny days", "Black", "HAT-BLK-CAP"));
 
-        // Create an OutfitGenerator
+        // Create the outfit generator
         OutfitGenerator generator = new OutfitGenerator(wardrobe);
 
         // Test 1: Business event on a cold day
@@ -69,12 +72,12 @@ public class OutfitGeneratorTest {
         System.out.println("\n=== Casual / Sunny Event ===");
         System.out.println(generator.getOutfitSummaryText());
 
-        // Test 3: Invalid event (missing type)
+        // Test 3: Invalid event (missing required fields)
         Event invalidEvent = new Event(
-                "",         // Missing name
+                "",          // Missing name
                 "Somewhere",
                 "Anytime",
-                "",         // Missing type
+                "",          // Missing type
                 "Warm"
         );
 
